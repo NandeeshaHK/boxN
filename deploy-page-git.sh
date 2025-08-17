@@ -3,8 +3,8 @@ set -euo pipefail
 
 # Configuration
 BUILD_DIR="site"       # local folder containing static site to publish
-REMOTE="master"
-TARGET_BRANCH="master"
+REMOTE="boxN"          # The name of the remote repository
+TARGET_BRANCH="master" # The branch to push the subtree to
 
 if [ ! -d "$BUILD_DIR" ]; then
   echo "Error: build dir '$BUILD_DIR' not found. Put your static files there."
@@ -16,4 +16,4 @@ git add -A
 git commit -m "chore: pre-deploy commit" || echo "No changes to commit"
 
 # Push subtree to gh-pages
-git subtree push --prefix "$BUILD_DIR"  "boxN"
+git subtree push --prefix "$BUILD_DIR" "$REMOTE" "$TARGET_BRANCH"
