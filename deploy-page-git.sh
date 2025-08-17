@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Configuration
 BUILD_DIR="site"       # local folder containing static site to publish
-REMOTE="origin"
+REMOTE="boxN"
 TARGET_BRANCH="gh-pages"
 
 if [ ! -d "$BUILD_DIR" ]; then
