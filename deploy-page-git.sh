@@ -4,7 +4,7 @@ set -euo pipefail
 # Configuration
 BUILD_DIR="site"       # local folder containing static site to publish
 REMOTE="origin"        # The name of the remote repository (usually "origin")
-TARGET_BRANCH="master" # The branch to push the subtree to
+TARGET_BRANCH="gh-pages" # The branch to push the subtree to
 
 if [ ! -d "$BUILD_DIR" ]; then
   echo "Error: build dir '$BUILD_DIR' not found. Put your static files there."
