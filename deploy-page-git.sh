@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Configuration
 BUILD_DIR="site"       # local folder containing static site to publish
-REMOTE="boxN"          # The name of the remote repository
+REMOTE="origin"        # The name of the remote repository (usually "origin")
 TARGET_BRANCH="master" # The branch to push the subtree to
 
 if [ ! -d "$BUILD_DIR" ]; then
