@@ -1,29 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dots & Boxes — Demo</title>
-  <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 0; background:#f8fafb; color:#111; }
-    .wrap { max-width:1000px; margin:40px auto; padding:24px; background:white; border-radius:10px; box-shadow:0 6px 24px rgba(20,20,30,0.06); }
-    h1 { margin-top:0; }
-    .screenshot { width:100%; max-width:640px; display:block; border-radius:8px; margin: 12px 0; }
-    .footer { margin-top:18px; color:#555; font-size:14px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dots & Boxes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <h1>Dots & Boxes — Static Demo Page</h1>
-    <p>This repository hosts a static page for the Dots & Boxes project. Replace this page with your HTML/JS game, or link to an exported web build.</p>
-
-    <!-- Replace assets/screenshot.png with your image if you have one -->
-    <img class="screenshot" src="assets/screenshot.png" alt="screenshot">
-
-    <h2>Play</h2>
-    <p>If you port your game to HTML/JS, place the output in this folder (site/) and deploy — it will be served at <code>https://&lt;your-user&gt;.github.io/&lt;your-repo&gt;/</code> or a custom domain.</p>
-
-    <div class="footer">Built for GitHub Pages deployment — see README for deployment steps.</div>
+  <div class="game-container">
+    <header class="header">
+      <h1>Dots & Boxes</h1>
+      <div class="scores">
+        <div class="score" id="score-a">A: 0</div>
+        <div class="score" id="score-b">B: 0</div>
+      </div>
+    </header>
+    
+    <div class="game-area">
+      <canvas id="gameCanvas"></canvas>
+      
+      <div class="sidebar">
+        <div class="current-player">
+          Current: <span id="current-player">A</span>
+        </div>
+        <button id="restart-btn" class="btn">New Game</button>
+      </div>
+    </div>
+    
+    <div id="game-over" class="modal">
+      <div class="modal-content">
+        <h2>Game Over!</h2>
+        <p id="winner-text">Player X wins!</p>
+        <button id="play-again" class="btn">Play Again</button>
+      </div>
+    </div>
   </div>
+  
+  <script src="game.js"></script>
 </body>
 </html>
