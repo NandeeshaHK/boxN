@@ -16,4 +16,4 @@ git add -A
 git commit -m "chore: pre-deploy commit" || echo "No changes to commit"
 
 # Push subtree to gh-pages
-git subtree push --prefix "$BUILD_DIR" 
+git subtree push --prefix "$BUILD_DIR"  "boxN"
